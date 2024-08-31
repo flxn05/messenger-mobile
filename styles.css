@@ -31,9 +31,6 @@ main {
   font-size: 1.2rem;
   color: lightgray;
 }
-main div {
-  -webkit-tap-highlight-color: transparent;
-}
 
 /*SCROLLBAR*/
  ::-webkit-scrollbar {
@@ -80,7 +77,7 @@ nav {
 #logo-big {
   max-height: 5vh;
 }
-#headline {
+.headline {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
@@ -115,6 +112,7 @@ nav {
   align-items: center;
   font-size: 0.9rem;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 .chat-box:hover {
   transform: scale(0.95);
@@ -161,9 +159,7 @@ nav {
   display: inline-block;
   border-radius: 16px;
   margin-bottom: 1rem;
-  cursor: pointer;
-  transition: all 0.1s;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
 }
 
 .msg-content-tx {
@@ -177,15 +173,7 @@ nav {
   display: inline-block;
   border-radius: 16px;
   margin-bottom: 1rem;
-  cursor: pointer;
-  transition: all 0.1s;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
-}
-
-.msg-content-rx:hover,
-.msg-content-tx:hover {
-  transform: scale(1.025);
-  box-shadow: 0 0 24px black;
+  font-size: 1rem;
 }
 
 /*TEXT INPUT FIELD*/
@@ -198,6 +186,7 @@ nav {
   justify-content: center;
 }
 .text-input {
+  margin-inline: 6px;
   padding-left: 24px;
   padding-right: 24px;
   padding-bottom: 10px;
@@ -216,6 +205,7 @@ nav {
 }
 .send-msg {
   padding: 0;
+  margin-right: 6px;
   width: 44px;
   height: 44px;
   border-radius: 22px;
@@ -224,26 +214,29 @@ nav {
   background-image: linear-gradient(45deg, rgb(111, 0, 255), rgb(212, 0, 255));
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+}
+.loading-con {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(17, 0, 27);
+  animation: start-mobile .5s both;
+}
+.loading {
+  display: flex;
+  flex-direction: row;
+}
+#loading-headline {
+  margin: 0;
 }
 
-/*TEXT INPUT FIELD EFFECTS*/
-
-
-
-
-
-
-
-/*container has block to prevent -m -m 
-msg has inline*/
-
-
-
-
-
-
-
-
-/*@ MEDIA QUERY: GREY LINE IN MAIN*/
-/*@ANIMATION KEYFRAMES IN INTRO*/
+@keyframes start-mobile {
+  0% {display: normal;}
+  100% {display: none;}
+}
